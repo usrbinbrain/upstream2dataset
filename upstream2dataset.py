@@ -52,8 +52,6 @@ def main():
         sys.exit(1)
     data = response.json()
 
-    print(data)
-
     target_files = [item for item in data.get('tree', []) if item.get('path', '')]
     print(f'{len(target_files)} files were found in the project {repo} on branch {branch}')
     print(f'Creating output file {out_file}')
